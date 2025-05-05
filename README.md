@@ -105,7 +105,8 @@ At the end:
 | Accuracy | Precision | Recall | F1-Score |
 |----------|-----------|--------|----------|
 | 0.7432   | 0.7555    | 0.7296 | 0.7360   |
-📄 See `classification_report.txt` in `results/` folder for details.
+
+-📄 See `classification_report.txt` in `results/` folder for details.
 
 -🔍 Training Insights:
 The Custom CNN showed steady learning over 15 epochs, with training and validation accuracy improving in parallel — a good sign of balanced learning. Final validation accuracy reached ~74%, with no clear signs of overfitting. Performance across classes was varied, indicating that deeper architecture or enhanced data augmentation might help further improve generalization.
@@ -180,7 +181,8 @@ Pretrained VGG16 was adapted for flower classification with a custom classifier 
 | Accuracy | Precision | Recall | F1-Score |
 |----------|-----------|--------|----------|
 | 0.8816   | 0.8875    | 0.8804 | 0.8818   |
-📄 See `classification_report.txt` in `results/` folder for details.
+
+-📄 See `classification_report.txt` in `results/` folder for details.
  
 🧪 Overfitting Prevention Efforts:
 I tried hard to prevent overfitting in the VGG16 feature extractor model by using dropout in the classifier, applying L2 regularization (weight decay), and implementing early stopping. The training stopped early at epoch 7 when validation loss stopped improving, helping maintain generalization.
@@ -223,7 +225,8 @@ Fine-tuned VGG16 adapts deeper layers and classifier head for flower dataset.
 | Accuracy | Precision | Recall | F1-Score |
 |----------|-----------|--------|----------|
 | 0.9217   | 0.9209    | 0.9248 | 0.9220   |
-📄 See `classification_report.txt` in `results/` folder for details.
+
+-📄 See `classification_report.txt` in `results/` folder for details.
 🧠 Observation on Training Behavior
 
 💡 To mitigate overfitting in the fine-tuned VGG16 model, I carefully applied multiple regularization strategies. First, I added a Dropout(0.5) layer in the classifier head to reduce co-adaptation of neurons. I also fine-tuned only the deeper layers of VGG16, keeping the low-level filters frozen to preserve general visual features. Additionally, I trained with a low learning rate (0.0001) to ensure stable convergence, and implemented early stopping to halt training once validation performance plateaued—automatically stopping at epoch 7. These combined efforts helped the model achieve strong generalization without overfitting. ✅
