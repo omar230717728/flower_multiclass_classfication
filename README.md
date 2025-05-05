@@ -291,7 +291,7 @@ To replicate this work:
    ```
 4. Run visualizations:
    ```bash
-   python visualization/visualize_features.py
+   python visualization/visualize_customCNN.py
    python visualization/visualize_finetuned.py
    ```
 
